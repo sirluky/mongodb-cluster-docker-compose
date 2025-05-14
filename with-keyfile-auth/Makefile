@@ -21,22 +21,23 @@ docker-init-shard03:
 	docker compose exec shard03-a bash "/scripts/init-shard03.js"
 
 # Full initialization sequence
-init:
+setup:
 	$(MAKE) docker-up; \
 	sleep 5; \
 	$(MAKE) docker-init-configserver; \
 	sleep 5; \
 	$(MAKE) docker-init-shard01; \
-	sleep 5; \
+	sleep 1; \
 	$(MAKE) docker-init-shard02; \
-	sleep 5; \
+	sleep 1; \
 	$(MAKE) docker-init-shard03; \
-	sleep 5; \
+	sleep 1; \
 	$(MAKE) docker-init-router; \
 	sleep 5; \
 	$(MAKE) docker-auth; \
-	sleep 5; \
+	sleep 3; \
 	$(MAKE) docker-create-indexes
+	$(MAKE) docker-insert-data
 
 # Initialize router
 docker-init-router:
@@ -55,12 +56,16 @@ docker-connect-router:
 
 # Clean up docker compose containers
 docker-clean:
-	docker compose down -v --rmi all --remove-orphans
+	docker compose down -v --rmi all --remove-orphans -t 0
 
 # Remove all stopped containers
 docker-rm:
 	docker compose rm
 
-# Insert data
+docker-insert-data:
+	docker compose exec seeder python /scripts/insert_orders.py
+	docker compose exec seeder python /scripts/insert_order_items.py
+	docker compose exec seeder python /scripts/insert_products.py
+
 docker-create-indexes:
 	docker compose exec router01 sh -c "mongosh -u lukas -p 123 < /scripts/create-indexes.js"

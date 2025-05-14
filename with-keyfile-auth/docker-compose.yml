@@ -1,4 +1,13 @@
 services:
+  seeder:
+    build:
+      context: .
+      dockerfile: seeder.Dockerfile
+    volumes:
+      - ./scripts:/scripts
+      - ./dataset:/dataset
+    entrypoint: ["sleep", "infinity"]
+    network_mode: host
 
 ## Router
   router01:

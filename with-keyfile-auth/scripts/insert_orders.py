@@ -13,20 +13,16 @@ collection_name = "orders"
 orders_schema = {
     "$jsonSchema": {
         "bsonType": "object",
-        "required": [
-            "order_id", "customer_id", "order_status", "order_purchase_timestamp",
-            "order_approved_at", "order_delivered_carrier_date", "order_delivered_customer_date", "order_estimated_delivery_date"
-        ],
         "properties": {
             "order_id": {"bsonType": "string"},
             "customer_id": {"bsonType": "string"},
             "order_status": {"bsonType": "string"},
-            "order_purchase_timestamp": {"bsonType": "date"},
-            "order_approved_at": {"bsonType": "date"},
-            "order_delivered_carrier_date": {"bsonType": "date"},
-            "order_delivered_customer_date": {"bsonType": "date"},
-            "order_estimated_delivery_date": {"bsonType": "date"}
-        }
+            "order_purchase_timestamp": {"bsonType": ["date", "null"]},
+            "order_approved_at": {"bsonType": ["date", "null"]},
+            "order_delivered_carrier_date": {"bsonType": ["date", "null"]},
+            "order_delivered_customer_date": {"bsonType": ["date", "null"]},
+            "order_estimated_delivery_date": {"bsonType": ["date", "null"]}
+        },
     }
 }
 
@@ -51,7 +47,7 @@ else:
     db.command({
         "collMod": collection_name,
         "validator": orders_schema,
-        "validationLevel": "strict"
+        "validationLevel": "moderate"
     })
 collection = db[collection_name]
 

@@ -12,21 +12,18 @@ collection_name = "products"
 products_schema = {
     "$jsonSchema": {
         "bsonType": "object",
-        "required": [
-            "product_id", "product_category_name", "product_name_lenght", "product_description_lenght",
-            "product_photos_qty", "product_weight_g", "product_length_cm", "product_height_cm", "product_width_cm"
-        ],
         "properties": {
-            "product_id": {"bsonType": "string"},
-            "product_category_name": {"bsonType": "string"},
-            "product_name_lenght": {"bsonType": ["int", "long"]},
-            "product_description_lenght": {"bsonType": ["int", "long"]},
-            "product_photos_qty": {"bsonType": ["int", "long"]},
-            "product_weight_g": {"bsonType": ["int", "long"]},
-            "product_length_cm": {"bsonType": ["int", "long"]},
-            "product_height_cm": {"bsonType": ["int", "long"]},
-            "product_width_cm": {"bsonType": ["int", "long"]}
-        }
+            "product_id": {"bsonType": ["string", "null"]},
+            "product_category_name": {"bsonType": ["string", "null"]},
+            "product_name_lenght": {"bsonType": ["int", "long", "null"]},
+            "product_description_lenght": {"bsonType": ["int", "long", "null"]},
+            "product_photos_qty": {"bsonType": ["int", "long", "null"]},
+            "product_weight_g": {"bsonType": ["int", "long", "null"]},
+            "product_length_cm": {"bsonType": ["int", "long", "null"]},
+            "product_height_cm": {"bsonType": ["int", "long", "null"]},
+            "product_width_cm": {"bsonType": ["int", "long", "null"]}
+        },
+        "additionalProperties": True
     }
 }
 
@@ -51,7 +48,7 @@ else:
     db.command({
         "collMod": collection_name,
         "validator": products_schema,
-        "validationLevel": "strict"
+        "validationLevel": "moderate"
     })
 collection = db[collection_name]
 
