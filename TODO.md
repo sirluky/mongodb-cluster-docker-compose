@@ -37,9 +37,9 @@
   - [ ] Agregační funkce (6+ dotazů)
   - [ ] Konfigurace (6+ dotazů)
   - [ ] Nested dokumenty (6+ dotazů)
-  - [ ] Indexy (6+ dotazů)
+  - [x] Indexy (6+ dotazů)
   - [ ] Testování výpadku uzlů
-  - [ ] Implementace validačního schématu
+  - [x] Implementace validačního schématu
 
 ### 6. Testování
 - [ ] Testování clusteru
@@ -105,9 +105,9 @@
 - [ ] Uvedení použitých nástrojů
 
 ## Přílohy
-- [ ] Data
-  - [ ] 3 datasets
-  - [ ] Python skript (JupyterLab)
+- [x] Data
+  - [x] 3 datasets
+  - [x] Python skript - overit zda to musi byt jupyter, jinak done
 - [ ] Dotazy
   - [ ] Soubor se všemi dotazy
   - [ ] Zadání v přirozeném jazyce
