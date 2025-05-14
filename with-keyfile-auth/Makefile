@@ -34,7 +34,9 @@ init:
 	sleep 5; \
 	$(MAKE) docker-init-router; \
 	sleep 5; \
-	$(MAKE) docker-auth
+	$(MAKE) docker-auth; \
+	sleep 5; \
+	$(MAKE) docker-create-indexes
 
 # Initialize router
 docker-init-router:
@@ -58,3 +60,7 @@ docker-clean:
 # Remove all stopped containers
 docker-rm:
 	docker compose rm
+
+# Insert data
+docker-create-indexes:
+	docker compose exec router01 sh -c "mongosh -u lukas -p 123 < /scripts/create-indexes.js"

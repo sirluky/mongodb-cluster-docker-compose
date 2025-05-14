@@ -5,8 +5,8 @@
 ### 1. Základní nastavení
 - [x] Instalace MongoDB
   - [x] Výběr verze MongoDB
-  - [ ] Vytvoření keyfile pro MongoDB
-  - [ ] Nastavení autentizace a autorizace
+  - [x] Vytvoření keyfile pro MongoDB
+  - [x] Nastavení autentizace a autorizace
 
 ### 2. Architektura
 - [x] Design architektury
@@ -21,15 +21,15 @@
   - [x] Konfigurace MongoDB clusteru
   - [x] Nastavení replikace
   - [x] Nastavení shardingu
-  - [ ] Konfigurace zabezpečení
+  - [x] Konfigurace zabezpečení
 
 ### 4. Data
-- [ ] Příprava dat
-  - [ ] Vyhledání a zpracování 3 datových souborů
-  - [ ] Zajištění alespoň 5000 záznamů v jednom souboru
-  - [ ] Vytvoření Python skriptu pro zpracování dat
-  - [ ] Vytvoření JupyterLab notebooku
-  - [ ] Příprava statistik a grafů
+- [x] Příprava dat
+  - [x] Vyhledání a zpracování 3 datových souborů
+  - [x] Zajištění alespoň 5000 záznamů v jednom souboru
+  - [x] Vytvoření Python skriptu pro zpracování dat
+  - [x] Vytvoření JupyterLab notebooku
+  - [x] Příprava statistik a grafů
 
 ### 5. Dotazy
 - [ ] Vývoj dotazů
