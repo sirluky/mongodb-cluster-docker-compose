@@ -21,7 +21,7 @@ MongoDB (6.0.2) Sharded Cluster - Keyfile Authentication
 - [🔎 More commands](#-more-commands-)
   - [Normal Startup](#-normal-startup-)
   - [Resetting the Cluster](#-resetting-the-cluster-)
-  - [Clean up docker-compose](#-clean-up-docker-compose-)
+  - [Clean up docker compose](#-clean-up-docker compose-)
 - [📺 Screenshot](#-screenshot-)
 - [👌 Donate ^^](#-donate--)
 - [📚 Refrences](#-refrences-)
@@ -42,7 +42,7 @@ MongoDB (6.0.2) Sharded Cluster - Keyfile Authentication
 
 ### 📑 Note: 
 
-If you want to modify config files, on Windows you might need to save those file with EOL Conversion Unix (LF) mode. You can use notepad++ to do that [Edit menu => EOL Conversion => Unix](https://github.com/minhhungit/mongodb-cluster-docker-compose/tree/master/assets/EOL-unix-mode.png)
+If you want to modify config files, on Windows you might need to save those file with EOL Conversion Unix (LF) mode. You can use notepad++ to do that [Edit menu => EOL Conversion => Unix](https://github.com/minhhungit/mongodb-cluster-docker compose/tree/master/assets/EOL-unix-mode.png)
 
 ---
 ## ❓ Mongo Components [🔝](#-table-of-contents)
@@ -54,15 +54,15 @@ If you want to modify config files, on Windows you might need to save those file
 	* `shard03-a`,`shard03-b`, `shard03-c`
 * 2 Routers (mongos): `router01`, `router02`
 
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/sharding-and-replica-sets.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/sharding-and-replica-sets.png" style="width: 100%;" />
 
 ## ✨ Steps [🔝](#-table-of-contents)
 
 ### 🔨 Preparing
 
-First, make sure that you cloned this repository and go to folder `with-keyfile-auth`, this folder contains authentication docker-compose (for this tutorial)
+First, make sure that you cloned this repository and go to folder `with-keyfile-auth`, this folder contains authentication docker compose (for this tutorial)
 
-Next, we need a keyfile to setup authentication, I already created a file [here](https://github.com/minhhungit/mongodb-cluster-docker-compose/tree/master/with-keyfile-auth/mongodb-build/auth)
+Next, we need a keyfile to setup authentication, I already created a file [here](https://github.com/minhhungit/mongodb-cluster-docker compose/tree/master/with-keyfile-auth/mongodb-build/auth)
 If you want to use it for demo purpose then you can next to [Step 1: Start all of the containers](#-step-1-start-all-of-the-containers-)
 
 But if you want to create a key file for yourself, do as described below:
@@ -89,14 +89,14 @@ After creating `mongodb-keyfile`, **remember** to replace your keyfile with my f
 Make sure that you read preparing step, after that open powershell or cmd on folder `with-keyfile-auth` and run:
 
 ```bash
-docker-compose up -d
+docker compose up -d
 ```
 
 If you get error "docker.errors.DockerException: Error while fetching server API version" and 
 used WSL (Windows Subsystem for Linux) need to enable 'WSL Integration' for required distro 
 in Windows Docker Desktop (Settings -> Resources-> WSL Integration -> Enable integration with required distros).
 
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/wsl2.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/wsl2.png" style="width: 100%;" />
 
 Link: https://stackoverflow.com/a/65347214/3007147
 
@@ -105,11 +105,11 @@ Link: https://stackoverflow.com/a/65347214/3007147
 Run these command one by one:
 
 ```bash
-docker-compose exec configsvr01 bash "/scripts/init-configserver.js"
+docker compose exec configsvr01 bash "/scripts/init-configserver.js"
 
-docker-compose exec shard01-a bash "/scripts/init-shard01.js"
-docker-compose exec shard02-a bash "/scripts/init-shard02.js"
-docker-compose exec shard03-a bash "/scripts/init-shard03.js"
+docker compose exec shard01-a bash "/scripts/init-shard01.js"
+docker compose exec shard02-a bash "/scripts/init-shard02.js"
+docker compose exec shard03-a bash "/scripts/init-shard03.js"
 ```
 
 If you get error like "E QUERY    [thread1] SyntaxError: unterminated string literal @(shellhelp2)", problem maybe due to:
@@ -118,7 +118,7 @@ If you get error like "E QUERY    [thread1] SyntaxError: unterminated string lit
 
 To fix it, modify script files in `scripts` folder, remove newline, change multi line to one line.
 
-Or you can save the file with Unix mode in notepad++ [Edit menu => EOL Conversion => Unix](https://github.com/minhhungit/mongodb-cluster-docker-compose/tree/master/assets/EOL-unix-mode.png)
+Or you can save the file with Unix mode in notepad++ [Edit menu => EOL Conversion => Unix](https://github.com/minhhungit/mongodb-cluster-docker compose/tree/master/assets/EOL-unix-mode.png)
 
 Link: https://stackoverflow.com/a/51728442/3007147
 
@@ -126,7 +126,7 @@ Link: https://stackoverflow.com/a/51728442/3007147
 >Note: Wait a bit 5-10 seconds for the config server and shards to elect their primaries before initializing the router
 
 ```bash
-docker-compose exec router01 sh -c "mongosh < /scripts/init-router.js"
+docker compose exec router01 sh -c "mongosh < /scripts/init-router.js"
 ```
 
 ### 👉 Step 4: Setup authentication
@@ -134,11 +134,11 @@ docker-compose exec router01 sh -c "mongosh < /scripts/init-router.js"
 Default account is `your_admin` / `your_password`, you can change it in `/scripts/auth.js` file, after run the file, you can delete it
 
 ```bash
-docker-compose exec configsvr01 bash "/scripts/auth.js"
+docker compose exec configsvr01 bash "/scripts/auth.js"
 
-docker-compose exec shard01-a bash "/scripts/auth.js"
-docker-compose exec shard02-a bash "/scripts/auth.js"
-docker-compose exec shard03-a bash "/scripts/auth.js"
+docker compose exec shard01-a bash "/scripts/auth.js"
+docker compose exec shard02-a bash "/scripts/auth.js"
+docker compose exec shard03-a bash "/scripts/auth.js"
 ```
 
 Note: On Linux you might need to config permission firstly for `/scripts/auth.js`, use this command (no need for Windows): 
@@ -154,7 +154,7 @@ Okay, at this time your cluster is ready !
 Firstly, you need to access to router, it will ask your password:
 
 ```bash
-docker-compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
+docker compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
 ```
 
 Enter your password, in this case password is `your_password`, then run these commands to create database and enable sharding.
@@ -180,7 +180,7 @@ Btw, here is mongodb connection string if you want to try to connect mongodb clu
 mongodb://your_admin:your_password@127.0.0.1:27117,127.0.0.1:27118/?authMechanism=DEFAULT
 ```
 
-And if you are .NET developer there is a sample READ/WRITE data in mongodb cluster here: [https://github.com/minhhungit/mongodb-cluster-docker-compose/tree/master/client](https://github.com/minhhungit/mongodb-cluster-docker-compose/tree/master/client)
+And if you are .NET developer there is a sample READ/WRITE data in mongodb cluster here: [https://github.com/minhhungit/mongodb-cluster-docker compose/tree/master/client](https://github.com/minhhungit/mongodb-cluster-docker compose/tree/master/client)
 
 ---
 
@@ -195,7 +195,7 @@ docker exec -it router-01 bash -c "echo 'sh.status()' | mongosh --port 27017 -u 
 or
 
 ```bash
-docker-compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
+docker compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
 sh.status()
 ```
 
@@ -372,7 +372,7 @@ bye
 
 ### ✅ Check database status [🔝](#-table-of-contents)
 ```bash
-docker-compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
+docker compose exec router01 mongosh --port 27017 -u "your_admin" --authenticationDatabase admin
 use MyDatabase
 db.stats()
 db.MyCollection.getShardDistribution()
@@ -466,7 +466,7 @@ docker exec -it shard-01-node-a bash -c "echo 'rs.printSlaveReplicationInfo()' |
 For step 4, you also can exec command directly in container, run bellow command line by line (for example configserver) :
 
 ```
-docker-compose exec configsvr01 mongosh --port 27017
+docker compose exec configsvr01 mongosh --port 27017
 rs.initiate({_id: "rs-config-server", configsvr: true, version: 1, members: [ { _id: 0, host : 'configsvr01:27017' }, { _id: 1, host : 'configsvr02:27017' }, { _id: 2, host : 'configsvr03:27017' } ] });
 use admin;
 db.createUser({user: "your_admin", pwd: "your_password", roles:[{role: "root", db: "admin"}]});
@@ -512,26 +512,26 @@ docker exec -it mongo-config-01 bash -c "echo 'rs.status().members.forEach(funct
 ### ✦ Normal Startup [🔝](#-table-of-contents)
 The cluster only has to be initialized on the first run. 
 
-Subsequent startup can be achieved simply with `docker-compose up` or `docker-compose up -d`
+Subsequent startup can be achieved simply with `docker compose up` or `docker compose up -d`
 
 ### ✦ Resetting the Cluster [🔝](#-table-of-contents)
 To remove all data and re-initialize the cluster, make sure the containers are stopped and then:
 
 ```bash
-docker-compose rm
+docker compose rm
 ```
 
-### ✦ Clean up docker-compose [🔝](#-table-of-contents)
+### ✦ Clean up docker compose [🔝](#-table-of-contents)
 ```bash
-docker-compose down -v --rmi all --remove-orphans
+docker compose down -v --rmi all --remove-orphans
 ```
 
 ## 📺 Screenshot [🔝](#-table-of-contents)
 
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/demo.png" style="width: 100%;" />
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/demo-03.png" style="width: 100%;" />
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/demo-02.png" style="width: 100%;" />
-<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker-compose/master/images/replicaset-shard-01.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/demo.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/demo-03.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/demo-02.png" style="width: 100%;" />
+<img src="https://raw.githubusercontent.com/minhhungit/mongodb-cluster-docker compose/master/images/replicaset-shard-01.png" style="width: 100%;" />
 
 ---
 
@@ -544,5 +544,5 @@ docker-compose down -v --rmi all --remove-orphans
 
 ---
 ## 📚 Refrences [🔝](#-table-of-contents)
-- https://github.com/jfollenfant/mongodb-sharding-docker-compose
+- https://github.com/jfollenfant/mongodb-sharding-docker compose
 - https://viblo.asia/p/cai-dat-mongo-cluster-voi-docker-m68Z0NN25kG
