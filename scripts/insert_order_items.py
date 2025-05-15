@@ -5,9 +5,9 @@ from datetime import datetime
 import time
 
 # MongoDB connection details
-mongo_uri = "mongodb://lukas:123@127.0.0.1:27117,127.0.0.1:27118/"
+mongo_uri = "mongodb://lukas:123@router01:27017,router02:27017/"
 # If you need to specify the database in the URI, add '/ecommerce' at the end
-# mongo_uri = "mongodb://lukas:123@127.0.0.1:27117,127.0.0.1:27118/ecommerce"
+# mongo_uri = "mongodb://lukas:123@router01:27117,router02:27118/ecommerce"
 db_name = "ecommerce"
 collection_name = "order_items"
 
@@ -20,7 +20,7 @@ order_items_schema = {
         ],
         "properties": {
             "order_id": {"bsonType": "string"},
-            "order_item_id": {"bsonType": ["int", "long"]},
+            "order_item_id": {"bsonType": ["int"]},
             "product_id": {"bsonType": "string"},
             "seller_id": {"bsonType": "string"},
             "shipping_limit_date": {"bsonType": "date"},

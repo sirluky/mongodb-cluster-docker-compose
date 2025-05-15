@@ -4,6 +4,9 @@
 docker-up:
 	docker compose up -d
 
+docker-down:
+	docker compose down
+
 # Initialize config server
 docker-init-configserver:
 	docker compose exec configsvr01 bash "/scripts/init-configserver.js"
@@ -56,7 +59,7 @@ docker-connect-router:
 
 # Clean up docker compose containers
 docker-clean:
-	docker compose down -v --rmi all --remove-orphans -t 0
+	docker compose down -v -t 0
 
 # Remove all stopped containers
 docker-rm:
