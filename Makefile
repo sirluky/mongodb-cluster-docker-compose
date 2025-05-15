@@ -7,6 +7,10 @@ docker-up:
 docker-down:
 	docker compose down
 
+# Clean up docker compose containers
+docker-down-clean:
+	docker compose down -v -t 0
+
 # Initialize config server
 docker-init-configserver:
 	docker compose exec configsvr01 bash "/scripts/init-configserver.js"
@@ -25,6 +29,7 @@ docker-init-shard03:
 
 # Full initialization sequence
 setup:
+	$(MAKE) docker-down-clean
 	$(MAKE) docker-up; \
 	sleep 5; \
 	$(MAKE) docker-init-configserver; \
@@ -56,10 +61,6 @@ docker-auth:
 # Connect to MongoDB shell via router
 docker-connect-router:
 	docker compose exec router01 mongosh --port 27017 -u "lukas" --authenticationDatabase admin
-
-# Clean up docker compose containers
-docker-clean:
-	docker compose down -v -t 0
 
 # Remove all stopped containers
 docker-rm:
