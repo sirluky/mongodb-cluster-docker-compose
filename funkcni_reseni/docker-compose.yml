@@ -5,7 +5,7 @@ services:
       dockerfile: seeder.Dockerfile
     volumes:
       - ../dotazy/scripts:/scripts:ro
-      - ./data:/data:ro
+      - ../data:/data:ro
     entrypoint: ["sleep", "infinity"]
 
   jupyter:

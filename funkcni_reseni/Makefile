@@ -1,15 +1,10 @@
-# Makefile for MongoDB Cluster Management
+# MongoDB cluster management
 
-# Start all containers in detached mode
-docker-up:
-	docker compose up -d
-
-docker-down:
-	docker compose down
-
-# Clean up docker compose containers
 docker-down-clean:
 	docker compose down -v -t 0
+
+docker-up:
+	docker compose up -d
 
 # Initialize config server
 docker-init-configserver:
@@ -26,6 +21,25 @@ docker-init-shard02:
 # Initialize shard 03
 docker-init-shard03:
 	docker compose exec shard03-a bash "/scripts/init-shard03.js"
+
+# Initialize router
+docker-init-router:
+	docker compose exec router01 sh -c "mongosh < /scripts/init-router.js"
+
+# Setup authentication
+docker-auth:
+	docker compose exec configsvr01 bash "/scripts/auth.js"
+	docker compose exec shard01-a bash "/scripts/auth.js"
+	docker compose exec shard02-a bash "/scripts/auth.js"
+	docker compose exec shard03-a bash "/scripts/auth.js"
+
+docker-create-indexes:
+	cat ../dotazy/scripts/create-indexes.js | docker compose exec -T router01 mongosh -u lukas -p 123
+
+docker-insert-data:
+	docker compose exec seeder python /scripts/insert_orders.py
+	docker compose exec seeder python /scripts/insert_order_items.py
+	docker compose exec seeder python /scripts/insert_products.py
 
 # Full initialization sequence
 setup:
@@ -47,17 +61,6 @@ setup:
 	$(MAKE) docker-create-indexes
 	$(MAKE) docker-insert-data
 
-# Initialize router
-docker-init-router:
-	docker compose exec router01 sh -c "mongosh < /scripts/init-router.js"
-
-# Setup authentication
-docker-auth:
-	docker compose exec configsvr01 bash "/scripts/auth.js"
-	docker compose exec shard01-a bash "/scripts/auth.js"
-	docker compose exec shard02-a bash "/scripts/auth.js"
-	docker compose exec shard03-a bash "/scripts/auth.js"
-
 # Connect to MongoDB shell via router
 docker-connect-router:
 	docker compose exec router01 mongosh --port 27017 -u "lukas" --authenticationDatabase admin
@@ -65,11 +68,3 @@ docker-connect-router:
 # Remove all stopped containers
 docker-rm:
 	docker compose rm
-
-docker-insert-data:
-	docker compose exec seeder python /scripts/insert_orders.py
-	docker compose exec seeder python /scripts/insert_order_items.py
-	docker compose exec seeder python /scripts/insert_products.py
-
-docker-create-indexes:
-	docker compose exec router01 sh -c "mongosh -u lukas -p 123 < /scripts/create-indexes.js"
