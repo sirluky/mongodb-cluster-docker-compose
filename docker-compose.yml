@@ -13,6 +13,7 @@ services:
     container_name: jupyter-notebook
     ports:
       - 8888:8888
+    restart: always
     volumes:
       - ./visualization:/home/jovyan/visualization
       - ./dataset:/home/jovyan/dataset

@@ -11,6 +11,9 @@ mongosh "mongodb://lukas:123@127.0.0.1:27117,127.0.0.1:27118/?authMechanism=DEFA
 source venv/bin/activate
 ```
 
+### Dataset
+jako dataset byl použit https://www.kaggle.com/datasets/olistbr/brazilian-ecommerce.
+
 MongoDB (6.0.2) Sharded Cluster - Keyfile Authentication
 =========================================
 
