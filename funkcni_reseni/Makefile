@@ -29,12 +29,9 @@ docker-init-router:
 # Setup authentication
 docker-auth:
 	docker compose exec configsvr01 bash "/scripts/auth.js"
-	docker compose exec shard01-a bash "/scripts/auth.js"
-	docker compose exec shard02-a bash "/scripts/auth.js"
-	docker compose exec shard03-a bash "/scripts/auth.js"
 
 docker-create-indexes:
-	cat ../dotazy/scripts/create-indexes.js | docker compose exec -T router01 mongosh -u lukas -p 123
+	cat ../dotazy/scripts/create-indexes.js | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
 
 docker-insert-data:
 	docker compose exec seeder python /scripts/insert_orders.py
@@ -63,7 +60,7 @@ setup:
 
 # Connect to MongoDB shell via router
 docker-connect-router:
-	docker compose exec router01 mongosh --port 27017 -u "lukas" --authenticationDatabase admin
+	docker compose exec router01 mongosh --port 27017 -u "ecommerce_user" --authenticationDatabase admin
 
 # Remove all stopped containers
 docker-rm:

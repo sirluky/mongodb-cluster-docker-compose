@@ -92,7 +92,7 @@ make setup
 3. **Ověření běhu clusteru**
    - Připojte se k routeru:
    ```bash
-docker compose exec router01 mongosh --port 27017 -u "lukas" --authenticationDatabase admin
+docker compose exec router01 mongosh --port 27017 -u "admin_lukas" --authenticationDatabase admin
 sh.status()
 ```
 4. **Spuštění Jupyter notebooku** (pro analýzu dat):

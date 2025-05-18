@@ -1,6 +1,4 @@
-// Switch to the correct database
-db = db.getSiblingDB('ecommerce');
-
+use ecommerce
 // Orders collection
 db.orders.createIndex({ order_id: 1 }, { unique: true });
 db.orders.createIndex({ customer_id: 1 });

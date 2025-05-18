@@ -5,7 +5,7 @@ from datetime import datetime
 import time
 
 # MongoDB connection details
-mongo_uri = "mongodb://lukas:123@router01:27017,router02:27017/"
+mongo_uri = "mongodb://ecommerce_user:ecommerce123@router01:27017,router02:27017/ecommerce"
 db_name = "ecommerce"
 collection_name = "orders"
 

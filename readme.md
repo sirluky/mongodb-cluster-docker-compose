@@ -5,7 +5,7 @@
 make setup
 
 # you can then connect from mongo shell or copy this to Mongo Compass
-mongosh "mongodb://lukas:123@127.0.0.1:27117,127.0.0.1:27118/?authMechanism=DEFAULT"
+mongosh "mongodb://admin_lukas:123@127.0.0.1:27117,127.0.0.1:27118/?authMechanism=DEFAULT"
 
 # for using python scripts 
 source venv/bin/activate
