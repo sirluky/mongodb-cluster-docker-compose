@@ -6,8 +6,6 @@ import time
 
 # MongoDB connection details
 mongo_uri = "mongodb://lukas:123@router01:27017,router02:27017/"
-# If you need to specify the database in the URI, add '/ecommerce' at the end
-# mongo_uri = "mongodb://lukas:123@router01:27117,router02:27118/ecommerce"
 db_name = "ecommerce"
 collection_name = "order_items"
 
@@ -59,7 +57,7 @@ else:
 collection = db[collection_name]
 
 # Path to the CSV file
-csv_file_path = "../dataset/olist_order_items_dataset.csv"
+csv_file_path = "../data/olist_order_items_dataset.csv"
 print(f"Reading data from {csv_file_path}...")
 def parse_row(row):
     # Convert fields to appropriate types

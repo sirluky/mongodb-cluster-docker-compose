@@ -1,29 +1,28 @@
 import csv
 from pymongo import MongoClient, ASCENDING
 from pymongo.errors import BulkWriteError
+from datetime import datetime
 import time
 
 # MongoDB connection details
 mongo_uri = "mongodb://lukas:123@router01:27017,router02:27017/"
 db_name = "ecommerce"
-collection_name = "products"
+collection_name = "orders"
 
 # Validation schema for the collection
-products_schema = {
+orders_schema = {
     "$jsonSchema": {
         "bsonType": "object",
         "properties": {
-            "product_id": {"bsonType": ["string", "null"]},
-            "product_category_name": {"bsonType": ["string", "null"]},
-            "product_name_lenght": {"bsonType": ["int", "long", "null"]},
-            "product_description_lenght": {"bsonType": ["int", "long", "null"]},
-            "product_photos_qty": {"bsonType": ["int", "long", "null"]},
-            "product_weight_g": {"bsonType": ["int", "long", "null"]},
-            "product_length_cm": {"bsonType": ["int", "long", "null"]},
-            "product_height_cm": {"bsonType": ["int", "long", "null"]},
-            "product_width_cm": {"bsonType": ["int", "long", "null"]}
+            "order_id": {"bsonType": "string"},
+            "customer_id": {"bsonType": "string"},
+            "order_status": {"bsonType": "string"},
+            "order_purchase_timestamp": {"bsonType": ["date", "null"]},
+            "order_approved_at": {"bsonType": ["date", "null"]},
+            "order_delivered_carrier_date": {"bsonType": ["date", "null"]},
+            "order_delivered_customer_date": {"bsonType": ["date", "null"]},
+            "order_estimated_delivery_date": {"bsonType": ["date", "null"]}
         },
-        "additionalProperties": True
     }
 }
 
@@ -42,43 +41,43 @@ db = client[db_name]
 # Create the collection with validation if it doesn't exist
 if collection_name not in db.list_collection_names():
     print(f"Creating collection '{collection_name}' with validation schema ...")
-    db.create_collection(collection_name, validator=products_schema)
+    db.create_collection(collection_name, validator=orders_schema)
 else:
     print(f"Updating validation schema for collection '{collection_name}' ...")
     db.command({
         "collMod": collection_name,
-        "validator": products_schema,
+        "validator": orders_schema,
         "validationLevel": "moderate"
     })
 collection = db[collection_name]
 
-# Create indexes for performance
+# Create indexes for performance and relations
 print("Creating indexes ...")
-collection.create_index([("product_id", ASCENDING)], unique=True)
-collection.create_index([("product_category_name", ASCENDING)])
+collection.create_index([("order_id", ASCENDING)], unique=True)
+collection.create_index([("customer_id", ASCENDING)])
+# For a reference to order_items, create an index on order_id in both collections
+# Foreign keys are not enforced in MongoDB, but you can create indexes for fast lookups
+
 print("Indexes created.")
 
-csv_file_path = "../dataset/olist_products_dataset.csv"
+csv_file_path = "../data/olist_orders_dataset.csv"
 print(f"Reading data from {csv_file_path} ...")
-def try_int(val):
-    try:
-        return int(val)
-    except (ValueError, TypeError):
-        return None
-
 def parse_row(row):
+    def parse_date(val):
+        try:
+            return datetime.strptime(val, "%Y-%m-%d %H:%M:%S")
+        except Exception:
+            return None
     return {
-        "product_id": row["product_id"].strip('"'),
-        "product_category_name": row["product_category_name"],
-        "product_name_lenght": try_int(row["product_name_lenght"]),
-        "product_description_lenght": try_int(row["product_description_lenght"]),
-        "product_photos_qty": try_int(row["product_photos_qty"]),
-        "product_weight_g": try_int(row["product_weight_g"]),
-        "product_length_cm": try_int(row["product_length_cm"]),
-        "product_height_cm": try_int(row["product_height_cm"]),
-        "product_width_cm": try_int(row["product_width_cm"])
+        "order_id": row["order_id"].strip('"'),
+        "customer_id": row["customer_id"].strip('"'),
+        "order_status": row["order_status"],
+        "order_purchase_timestamp": parse_date(row["order_purchase_timestamp"]),
+        "order_approved_at": parse_date(row["order_approved_at"]),
+        "order_delivered_carrier_date": parse_date(row["order_delivered_carrier_date"]),
+        "order_delivered_customer_date": parse_date(row["order_delivered_customer_date"]),
+        "order_estimated_delivery_date": parse_date(row["order_estimated_delivery_date"])
     }
-
 
 with open(csv_file_path, mode='r', encoding='utf-8') as file:
     csv_reader = csv.DictReader(file)
