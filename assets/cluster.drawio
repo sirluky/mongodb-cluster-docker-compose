@@ -1,0 +1,417 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36 Edg/136.0.0.0" version="27.0.6">
+  <diagram name="Page-1" id="GDXkgUDsIikYT0okoggX">
+    <mxGraphModel dx="2209" dy="1267" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-1" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;dashed=1;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-3" target="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-128" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0;entryY=0.3;entryDx=0;entryDy=0;curved=1;fillColor=#0050ef;strokeColor=#001DBC;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-3" target="fuMWXnp4Dmd2ntmeUKRE-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-129" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;fillColor=#0050ef;strokeColor=#001DBC;curved=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-3" target="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="880" y="445" />
+              <mxPoint x="880" y="690" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-3" value="Config Servers" style="swimlane;fontSize=16;startSize=30;fontFamily=Lucida Console;sketchStyle=comic;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="50" y="320" width="380" height="250" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-4" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="27.05000000000001" y="50" width="65.89999999999998" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-5" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=solid;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-4">
+          <mxGeometry width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-6" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-4">
+          <mxGeometry x="11.667208672086758" y="19.996666666666783" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-7" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-4">
+          <mxGeometry x="25" y="40" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-8" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="157.04999999999998" y="50" width="65.89999999999998" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-9" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=solid;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-8">
+          <mxGeometry width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-10" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-8">
+          <mxGeometry x="11.667208672086758" y="19.996666666666783" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-11" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-8">
+          <mxGeometry x="25" y="40" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-12" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="142.95000000000002" y="125" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-13" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="20.00000000000001" y="125" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-14" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="275.9" y="125" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-15" style="orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=19;fontColor=#67AB9F;strokeWidth=2;endArrow=none;endFill=0;fillColor=#d0cee2;strokeColor=#56517e;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-3" source="fuMWXnp4Dmd2ntmeUKRE-5" target="fuMWXnp4Dmd2ntmeUKRE-9">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-16" style="orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.3;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=19;fontColor=#67AB9F;strokeWidth=2;endArrow=none;endFill=0;fillColor=#d0cee2;strokeColor=#56517e;entryX=0;entryY=0.7;entryDx=0;entryDy=0;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-3" source="fuMWXnp4Dmd2ntmeUKRE-9" target="fuMWXnp4Dmd2ntmeUKRE-18">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="111.70588235294144" y="300" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-17" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="290" y="50" width="65.89999999999998" height="75" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-18" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=solid;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-17">
+          <mxGeometry width="50" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-19" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-17">
+          <mxGeometry x="11.667208672086758" y="19.996666666666783" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-20" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-17">
+          <mxGeometry x="25" y="40" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-21" value="&lt;font color=&quot;#4d4d4d&quot;&gt;{a...d} ====&amp;gt; Shard 1&lt;br&gt;{e...m} ====&amp;gt; Shard 2&lt;br&gt;{n...z} ====&amp;gt; Shard 3&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fontSize=19;fontFamily=Lucida Console;fillColor=#d5e8d4;glass=0;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-3">
+          <mxGeometry x="52.94999999999999" y="170" width="260" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-22" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=12;strokeWidth=3;strokeColor=#6c8ebf;fillColor=#dae8fc;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-27" target="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-23" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=12;strokeWidth=3;strokeColor=#6c8ebf;fillColor=#dae8fc;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1021" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-24" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=12;strokeWidth=3;strokeColor=#6c8ebf;fillColor=#dae8fc;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1371" y="560" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-25" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.75;exitDx=0;exitDy=0;shadow=1;fontFamily=Lucida Console;fontSize=19;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="1270" y="320" as="targetPoint" />
+            <Array as="points">
+              <mxPoint x="1130" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-26" value="Response" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=19;fontFamily=Lucida Console;fontColor=#000000;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-25">
+          <mxGeometry x="-0.4017" y="2" relative="1" as="geometry">
+            <mxPoint x="113" y="7" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-27" value="Router Tier" style="swimlane;startSize=30;fontSize=16;fontFamily=Lucida Console;sketchStyle=comic;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="690" y="220" width="330" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-30" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry x="20" y="52" width="70" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-31" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=solid;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-30">
+          <mxGeometry width="60.568603213844185" height="76.52173913043478" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-32" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-30">
+          <mxGeometry x="8.65265760197774" y="22.956521739130437" width="38.26086956521739" height="38.26086956521739" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-33" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-30">
+          <mxGeometry x="34.61063040791096" y="61.21739130434783" width="31.297391304347826" height="26.782608695652176" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-34" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry x="119" y="53" width="70" height="88" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-35" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=solid;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-34">
+          <mxGeometry width="60.568603213844185" height="76.52173913043478" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-36" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-34">
+          <mxGeometry x="8.65265760197774" y="22.956521739130437" width="38.26086956521739" height="38.26086956521739" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-37" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-34">
+          <mxGeometry x="34.61063040791096" y="61.21739130434783" width="31.297391304347826" height="26.782608695652176" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-38" value="mongos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry x="15" y="135" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-39" value="mongos" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry x="114" y="135" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-40" value="" style="swimlane;startSize=0;shadow=0;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fontSize=12;fillColor=#bac8d3;collapsible=0;strokeWidth=3;swimlaneLine=0;strokeColor=#B3B3B3;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="540" y="500" width="1090" height="430" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-41" value="" style="swimlane;startSize=0;shadow=0;glass=0;fontFamily=Lucida Console;fontSize=16;fillColor=#ffffff;gradientColor=none;sketchStyle=comic;collapsible=0;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="18" y="40" width="290" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-42" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-41" source="fuMWXnp4Dmd2ntmeUKRE-46" target="fuMWXnp4Dmd2ntmeUKRE-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-43" value="&lt;font color=&quot;#ff9999&quot;&gt;replication&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Lucida Console;fontStyle=0;fontColor=#67AB9F;labelBackgroundColor=#ffffff;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-42">
+          <mxGeometry x="-0.2303" y="-2" relative="1" as="geometry">
+            <mxPoint x="11" y="28" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-44" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-41" source="fuMWXnp4Dmd2ntmeUKRE-46" target="fuMWXnp4Dmd2ntmeUKRE-62">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-45" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="106" y="50" width="80" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-46" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=hachure;fillColor=#89C1CC;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-45">
+          <mxGeometry width="60.69802731411231" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-47" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-45">
+          <mxGeometry x="14.163531013155403" y="25.329111111111256" width="32.37228123419323" height="32.37228123419323" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-48" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;dashed=1;dashPattern=1 1;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-45">
+          <mxGeometry x="38.0011077389985" y="52.51266666666666" width="49.65098634294387" height="42.48861911987862" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-49" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="7.449999999999989" y="273" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-50" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Primary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#10739e;strokeWidth=1;fillColor=#b1ddf0;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="178" y="58" width="78" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-51" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="188.75000000000023" y="272" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-52" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="176" y="28" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-53" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="188.75" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-54" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="12.950000000000031" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-55" value="Replica Set" style="whiteSpace=wrap;html=1;shadow=1;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fontSize=19;strokeColor=#b85450;strokeWidth=3;fillColor=#f8cecc;fillStyle=hachure;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="4.45" y="5" width="135.55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-56" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="20.55" y="155" width="77.9" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-57" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;fontColor=#000000;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-56">
+          <mxGeometry width="59.10470409711686" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-58" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-56">
+          <mxGeometry x="13.791738324060072" y="24.529244444444586" width="27.475973697521507" height="27.475973697521507" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-59" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-56">
+          <mxGeometry x="29.55235204855843" y="49.06666666666667" width="42.141274658573614" height="36.06221547799698" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-60" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=19;fontColor=#67AB9F;endArrow=none;endFill=0;strokeWidth=2;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-56" source="fuMWXnp4Dmd2ntmeUKRE-57" target="fuMWXnp4Dmd2ntmeUKRE-57">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-61" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-41">
+          <mxGeometry x="203.6" y="155" width="76.15" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-62" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-61">
+          <mxGeometry width="57.77693474962066" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-63" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-61">
+          <mxGeometry x="13.481911083147297" y="24.529244444444586" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-64" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-61">
+          <mxGeometry x="28.88846737481033" y="49.06666666666666" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-65" value="&lt;font style=&quot;font-size: 20px&quot; color=&quot;#6666ff&quot;&gt;&lt;b&gt;Shard 1&lt;/b&gt;&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;strokeColor=#F62E00;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fillColor=#D4E1F5;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="120" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-68" value="" style="swimlane;startSize=0;shadow=0;glass=0;fontFamily=Lucida Console;fontSize=16;fillColor=#ffffff;gradientColor=none;sketchStyle=comic;collapsible=0;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="384" y="40" width="290" height="300" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-69" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-68" source="fuMWXnp4Dmd2ntmeUKRE-72" target="fuMWXnp4Dmd2ntmeUKRE-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-70" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-68" source="fuMWXnp4Dmd2ntmeUKRE-72" target="fuMWXnp4Dmd2ntmeUKRE-88">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-71" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="106" y="50" width="80" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-72" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=hachure;fillColor=#89C1CC;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-71">
+          <mxGeometry width="60.69802731411231" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-73" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-71">
+          <mxGeometry x="14.163531013155403" y="25.329111111111256" width="32.37228123419323" height="32.37228123419323" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-74" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;dashed=1;dashPattern=1 1;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-71">
+          <mxGeometry x="38.0011077389985" y="52.51266666666666" width="49.65098634294387" height="42.48861911987862" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-75" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="7.449999999999989" y="273" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-76" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Primary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#10739e;strokeWidth=1;fillColor=#b1ddf0;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="178" y="58" width="78" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-77" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="188.75000000000023" y="272" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-78" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="176" y="28" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-79" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="188.75" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-80" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="12.950000000000031" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-81" value="Replica Set" style="whiteSpace=wrap;html=1;shadow=1;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fontSize=19;strokeColor=#b85450;strokeWidth=3;fillColor=#f8cecc;fillStyle=hachure;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="4.45" y="5" width="135.55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-82" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="20.55" y="155" width="77.9" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-83" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;fontColor=#000000;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-82">
+          <mxGeometry width="59.10470409711686" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-84" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-82">
+          <mxGeometry x="13.791738324060072" y="24.529244444444586" width="27.475973697521507" height="27.475973697521507" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-85" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-82">
+          <mxGeometry x="29.55235204855843" y="49.06666666666667" width="42.141274658573614" height="36.06221547799698" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-86" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=19;fontColor=#67AB9F;endArrow=none;endFill=0;strokeWidth=2;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-82" source="fuMWXnp4Dmd2ntmeUKRE-83" target="fuMWXnp4Dmd2ntmeUKRE-83">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-87" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="203.6" y="155" width="76.15" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-88" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-87">
+          <mxGeometry width="57.77693474962066" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-89" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-87">
+          <mxGeometry x="13.481911083147297" y="24.529244444444586" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-90" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-87">
+          <mxGeometry x="28.88846737481033" y="49.06666666666666" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-91" value="&lt;font color=&quot;#ff9999&quot;&gt;replication&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Lucida Console;fontStyle=0;fontColor=#67AB9F;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-68">
+          <mxGeometry x="139.9997678890304" y="169.99713918918042" as="geometry">
+            <mxPoint x="-1" y="27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-92" value="" style="swimlane;startSize=0;shadow=0;glass=0;fontFamily=Lucida Console;fontSize=16;fillColor=#ffffff;gradientColor=none;sketchStyle=comic;collapsible=0;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="734" y="40" width="290" height="320" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-93" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-92" source="fuMWXnp4Dmd2ntmeUKRE-96" target="fuMWXnp4Dmd2ntmeUKRE-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-94" style="edgeStyle=orthogonalEdgeStyle;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;fontFamily=Lucida Console;fontSize=16;dashed=1;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-92" source="fuMWXnp4Dmd2ntmeUKRE-96" target="fuMWXnp4Dmd2ntmeUKRE-112">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-95" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="106" y="50" width="80" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-96" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#6c8ebf;shadow=0;fillStyle=hachure;fillColor=#89C1CC;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-95">
+          <mxGeometry width="60.69802731411231" height="76" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-97" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-95">
+          <mxGeometry x="14.163531013155403" y="25.329111111111256" width="32.37228123419323" height="32.37228123419323" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-98" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;dashed=1;dashPattern=1 1;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-95">
+          <mxGeometry x="38.0011077389985" y="52.51266666666666" width="49.65098634294387" height="42.48861911987862" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-99" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="7.449999999999989" y="273" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-100" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Primary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#10739e;strokeWidth=1;fillColor=#b1ddf0;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="178" y="58" width="78" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-101" value="&lt;font color=&quot;#4d4d4d&quot;&gt;Secondary&lt;/font&gt;" style="html=1;shadow=0;dashed=0;shape=mxgraph.bootstrap.rrect;rSize=5;strokeColor=#b46504;strokeWidth=1;fillColor=#fad7ac;whiteSpace=wrap;align=left;verticalAlign=middle;spacingLeft=0;fontStyle=1;fontSize=14;spacing=5;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="188.75000000000023" y="272" width="91" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-102" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="176" y="28" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-103" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="188.75" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-104" value="mongod" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fontSize=19;fontFamily=Lucida Console;fontColor=#67AB9F;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="12.950000000000031" y="247" width="80" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-105" value="Replica Set" style="whiteSpace=wrap;html=1;shadow=1;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fontSize=19;strokeColor=#b85450;strokeWidth=3;fillColor=#f8cecc;fillStyle=hachure;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="4.45" y="5" width="135.55" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-106" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="20.55" y="155" width="77.9" height="165" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-107" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;fontColor=#000000;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-106">
+          <mxGeometry width="59.10470409711686" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-108" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-106">
+          <mxGeometry x="13.791738324060072" y="24.529244444444586" width="27.475973697521507" height="27.475973697521507" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-109" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-106">
+          <mxGeometry x="29.55235204855843" y="49.06666666666667" width="42.141274658573614" height="36.06221547799698" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-110" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.3;exitDx=0;exitDy=0;fontFamily=Lucida Console;fontSize=19;fontColor=#67AB9F;endArrow=none;endFill=0;strokeWidth=2;curved=1;sketch=1;" edge="1" parent="fuMWXnp4Dmd2ntmeUKRE-106" source="fuMWXnp4Dmd2ntmeUKRE-107" target="fuMWXnp4Dmd2ntmeUKRE-107">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-111" value="" style="group;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="203.6" y="155" width="76.15" height="92" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-112" value="" style="shape=datastore;whiteSpace=wrap;html=1;glass=0;fontFamily=Lucida Console;fontSize=16;strokeColor=#BD7000;shadow=0;fillStyle=cross-hatch;fillColor=#f0a30a;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-111">
+          <mxGeometry width="57.77693474962066" height="73.6" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-113" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/f/f9/Antu_mongodb.svg/2048px-Antu_mongodb.svg.png;direction=south;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-111">
+          <mxGeometry x="13.481911083147297" y="24.529244444444586" width="26.666666666666664" height="26.666666666666664" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-114" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-111">
+          <mxGeometry x="28.88846737481033" y="49.06666666666666" width="40.9" height="35" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-115" value="&lt;font color=&quot;#ff9999&quot;&gt;replication&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=12;fontFamily=Lucida Console;fontStyle=0;fontColor=#67AB9F;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry x="144.9997678890304" y="169.99713918918042" as="geometry">
+            <mxPoint x="-1" y="27" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-116" value="&lt;font style=&quot;font-size: 20px&quot; color=&quot;#6666ff&quot;&gt;&lt;b&gt;Shard 2&lt;/b&gt;&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;strokeColor=#F62E00;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fillColor=#D4E1F5;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="485" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-117" value="&lt;font style=&quot;font-size: 20px&quot; color=&quot;#6666ff&quot;&gt;&lt;b&gt;Shard 3&lt;/b&gt;&lt;/font&gt;" style="strokeWidth=1;shadow=0;dashed=0;align=center;html=1;shape=mxgraph.mockup.text.stickyNote2;fontColor=#666666;mainText=;fontSize=17;whiteSpace=wrap;strokeColor=#F62E00;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;fillColor=#D4E1F5;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-40">
+          <mxGeometry x="834" y="340" width="120" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-118" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;exitX=0;exitY=0.5;exitDx=0;exitDy=0;entryX=1;entryY=0.5;entryDx=0;entryDy=0;shadow=1;fontFamily=Lucida Console;fontSize=19;fontColor=#000000;endArrow=classic;endFill=1;strokeWidth=3;fillColor=#dae8fc;strokeColor=#6c8ebf;curved=1;sketch=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-120" target="fuMWXnp4Dmd2ntmeUKRE-27">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1130" y="250" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-119" value="Request" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];fontSize=19;fontFamily=Lucida Console;fontColor=#000000;sketch=1;" vertex="1" connectable="0" parent="fuMWXnp4Dmd2ntmeUKRE-118">
+          <mxGeometry x="-0.3663" y="-3" relative="1" as="geometry">
+            <mxPoint x="-66" y="-8" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-120" value="Users" style="swimlane;startSize=30;fontSize=16;fontFamily=Lucida Console;sketchStyle=comic;collapsible=0;fillColor=#dae8fc;strokeColor=#6c8ebf;swimlaneFillColor=none;glass=0;fillStyle=auto;sketch=1;" vertex="1" parent="1">
+          <mxGeometry x="1270" y="120" width="342.97" height="350" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-121" value="&lt;span style=&quot;font-size: 17px;&quot;&gt;MongoDB Compass&lt;/span&gt;" style="outlineConnect=0;fontColor=#232F3E;gradientColor=none;strokeColor=#232F3E;fillColor=#ffffff;dashed=0;verticalLabelPosition=bottom;verticalAlign=top;align=center;html=1;fontSize=12;fontStyle=0;aspect=fixed;shape=mxgraph.aws4.resourceIcon;resIcon=mxgraph.aws4.client;shadow=0;glass=0;disableMultiStroke=0;disableMultiStrokeFill=0;sketchStyle=comic;pointerEvents=1;fontFamily=Lucida Console;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-120">
+          <mxGeometry x="44.17" y="50" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-140" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;dashed=1;dashPattern=1 1;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-120">
+          <mxGeometry x="124.17" y="261.25" width="49.65098634294387" height="42.48861911987862" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-139" value="" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=#ffffff;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://www.docker.com/wp-content/uploads/2022/03/vertical-logo-monochromatic.png;dashed=1;dashPattern=1 1;sketch=1;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-120">
+          <mxGeometry x="240" y="147.20999999999998" width="50" height="42.79" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-143" value="Jupyter Notebook" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Jupyter_logo.svg/1200px-Jupyter_logo.svg.png;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-120">
+          <mxGeometry x="44.16999999999999" y="190" width="98.1" height="113.74" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-144" value="Python seeder" style="shape=image;verticalLabelPosition=bottom;labelBackgroundColor=default;verticalAlign=top;aspect=fixed;imageAspect=0;image=https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Python-logo-notext.svg/640px-Python-logo-notext.svg.png;" vertex="1" parent="fuMWXnp4Dmd2ntmeUKRE-120">
+          <mxGeometry x="184.96" y="95" width="86.48" height="95" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-123" value="&lt;font data-font-src=&quot;https://fonts.googleapis.com/css?family=Permanent+Marker&quot; style=&quot;font-size: 42px&quot; face=&quot;Comic Sans MS&quot;&gt;MONGODB CLUSTER&lt;/font&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=#82b366;fontSize=19;padding: 20px;fontFamily=Lucida Console;fillColor=#d5e8d4;glass=0;sketch=1;spacingTop=10;spacing=2;spacingLeft=10;spacingRight=10;spacingBottom=10;fontColor=#525252;" vertex="1" parent="1">
+          <mxGeometry x="600" y="60" width="460" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="fuMWXnp4Dmd2ntmeUKRE-130" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.021;entryY=0.4;entryDx=0;entryDy=0;entryPerimeter=0;fillColor=#0050ef;strokeColor=#001DBC;curved=1;" edge="1" parent="1" source="fuMWXnp4Dmd2ntmeUKRE-3" target="fuMWXnp4Dmd2ntmeUKRE-92">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="1230" y="445" />
+              <mxPoint x="1230" y="660" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
