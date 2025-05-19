@@ -4,7 +4,7 @@ from pymongo.errors import BulkWriteError
 import time
 
 # MongoDB connection details
-mongo_uri = "mongodb://ecommerce_user:ecommerce123@router01:27017,router02:27017/ecommerce"
+mongo_uri = "mongodb://admin_lukas:123@router01:27017,router02:27017/"
 db_name = "ecommerce"
 collection_name = "products"
 

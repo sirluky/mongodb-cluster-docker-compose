@@ -4,7 +4,7 @@ docker-down-clean:
 	docker compose down -v -t 0
 
 docker-up:
-	docker compose up -d
+	docker compose up -d --build
 
 # Initialize config server
 docker-init-configserver:
@@ -31,14 +31,14 @@ docker-auth:
 	docker compose exec configsvr01 bash "/scripts/auth.sh"
 
 docker-create-indexes-and-shards:
-	cat ../dotazy/scripts/create-indexes-and-shards.js | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
+	cat ../dotazy/scripts/create-indexes-and-shards.js | docker compose exec -T router01 mongosh -u admin_lukas -p 123 --authenticationDatabase admin
 
 docker-insert-data:
 	docker compose exec seeder python /scripts/insert_customers.py
 	docker compose exec seeder python /scripts/insert_orders.py
 	docker compose exec seeder python /scripts/insert_products.py
 
-# Full initialization sequence
+# Full initialization
 setup:
 	$(MAKE) docker-down-clean
 	$(MAKE) docker-up; \
@@ -58,16 +58,16 @@ setup:
 	$(MAKE) docker-create-indexes-and-shards
 	$(MAKE) docker-insert-data
 
-# Connect to MongoDB shell via router
+# MongoDB shell
 docker-connect-router:
-	docker compose exec router01 mongosh --port 27017 -u "ecommerce_user" --authenticationDatabase admin
+	docker compose exec router01 mongosh --port 27017 -u "admin_lukas" --authenticationDatabase admin
 
 # Remove all stopped containers
 docker-rm:
 	docker compose rm
 
 docker-setup-data:
-	cat ./scripts/clean-collections.sh | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
+	cat ./scripts/clean-collections.sh | docker compose exec -T router01 mongosh -u admin_lukas -p 123 --authenticationDatabase admin
 
 	$(MAKE) docker-create-indexes-and-shards
 

@@ -2,7 +2,8 @@
 use ecommerce
 
 // Povolení shardingu pro databázi
-sh.enableSharding("ecommerce")
+sh.enableBalancing("ecommerce");
+sh.enableSharding("ecommerce");
 
 // Indexy pro kolekci orders
 db.orders.createIndex({ "_id": 1 });
@@ -22,6 +23,6 @@ db.customers.createIndex({ "customer_state": 1 });
 db.customers.createIndex({ "customer_city": 1 });
 
 // Nastavení shardování pro kolekce
-sh.shardCollection("ecommerce.orders", { "_id": 1 });
-sh.shardCollection("ecommerce.products", { "_id": 1 });
-sh.shardCollection("ecommerce.customers", { "_id": 1 });
+sh.shardCollection("ecommerce.orders", { "_id": "hashed" });
+sh.shardCollection("ecommerce.products", { "_id": "hashed" });
+sh.shardCollection("ecommerce.customers", { "_id": "hashed" });
