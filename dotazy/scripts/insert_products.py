@@ -1,5 +1,5 @@
 import csv
-from pymongo import MongoClient, ASCENDING
+from pymongo import MongoClient
 from pymongo.errors import BulkWriteError
 import time
 
@@ -12,8 +12,9 @@ collection_name = "products"
 products_schema = {
     "$jsonSchema": {
         "bsonType": "object",
+        "required": ["product_category_name"],
         "properties": {
-            "product_id": {"bsonType": ["string", "null"]},
+            # "product_id": {"bsonType": ["string", "null"]},
             "product_category_name": {"bsonType": ["string", "null"]},
             "product_name_lenght": {"bsonType": ["int", "long", "null"]},
             "product_description_lenght": {"bsonType": ["int", "long", "null"]},
@@ -53,11 +54,6 @@ else:
 collection = db[collection_name]
 
 # Create indexes for performance
-print("Creating indexes ...")
-collection.create_index([("product_id", ASCENDING)], unique=True)
-collection.create_index([("product_category_name", ASCENDING)])
-print("Indexes created.")
-
 csv_file_path = "../data/olist_products_dataset.csv"
 print(f"Reading data from {csv_file_path} ...")
 def try_int(val):
@@ -68,7 +64,7 @@ def try_int(val):
 
 def parse_row(row):
     return {
-        "product_id": row["product_id"].strip('"'),
+        "_id": row["product_id"].strip('"'),
         "product_category_name": row["product_category_name"],
         "product_name_lenght": try_int(row["product_name_lenght"]),
         "product_description_lenght": try_int(row["product_description_lenght"]),
@@ -84,17 +80,30 @@ with open(csv_file_path, mode='r', encoding='utf-8') as file:
     csv_reader = csv.DictReader(file)
     docs = []
     count = 0
+    batch_size = 5000
+    
     for row in csv_reader:
         docs.append(parse_row(row))
         count += 1
-        if count % 1000 == 0:
-            print(f"Parsed {count} rows ...")
-    print(f"Parsed total {count} rows. Inserting into MongoDB ...")
-    try:
-        result = collection.insert_many(docs, ordered=False)
-        print(f"Inserted {len(result.inserted_ids)} documents into '{collection_name}'.")
-    except BulkWriteError as bwe:
-        print("Some documents failed validation:", bwe.details)
+        
+        if len(docs) >= batch_size:
+            try:
+                result = collection.insert_many(docs, ordered=False)
+                print(f"Inserted {len(result.inserted_ids)} documents...")
+                docs = []
+            except BulkWriteError as bwe:
+                print("Some documents failed validation:", bwe.details)
+                docs = []
+    
+    # Insert remaining documents
+    if docs:
+        try:
+            result = collection.insert_many(docs, ordered=False)
+            print(f"Inserted {len(result.inserted_ids)} documents...")
+        except BulkWriteError as bwe:
+            print("Some documents failed validation:", bwe.details)
+
+print(f"Processed total {count} products.")
 
 print("Done. Closing MongoDB connection.")
 client.close()

@@ -28,14 +28,14 @@ docker-init-router:
 
 # Setup authentication
 docker-auth:
-	docker compose exec configsvr01 bash "/scripts/auth.js"
+	docker compose exec configsvr01 bash "/scripts/auth.sh"
 
-docker-create-indexes:
-	cat ../dotazy/scripts/create-indexes.js | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
+docker-create-indexes-and-shards:
+	cat ../dotazy/scripts/create-indexes-and-shards.js | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
 
 docker-insert-data:
+	docker compose exec seeder python /scripts/insert_customers.py
 	docker compose exec seeder python /scripts/insert_orders.py
-	docker compose exec seeder python /scripts/insert_order_items.py
 	docker compose exec seeder python /scripts/insert_products.py
 
 # Full initialization sequence
@@ -55,7 +55,7 @@ setup:
 	sleep 5; \
 	$(MAKE) docker-auth; \
 	sleep 3; \
-	$(MAKE) docker-create-indexes
+	$(MAKE) docker-create-indexes-and-shards
 	$(MAKE) docker-insert-data
 
 # Connect to MongoDB shell via router
@@ -65,3 +65,12 @@ docker-connect-router:
 # Remove all stopped containers
 docker-rm:
 	docker compose rm
+
+docker-setup-data:
+	cat ./scripts/clean-collections.sh | docker compose exec -T router01 mongosh -u ecommerce_user -p ecommerce123 --authenticationDatabase ecommerce
+
+	$(MAKE) docker-create-indexes-and-shards
+
+	docker compose exec seeder python /scripts/insert_customers.py
+	docker compose exec seeder python /scripts/insert_orders.py
+	docker compose exec seeder python /scripts/insert_products.py

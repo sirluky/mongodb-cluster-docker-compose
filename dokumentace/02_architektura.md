@@ -5,7 +5,7 @@ Tato kapitola detailně popisuje architekturu MongoDB clusteru, jeho nasazení, 
 ## 1.1 Schéma a popis architektury
 
 Cluster je tvořen následujícími komponentami:
-- **3 konfigurační servery** (configsvr01, configsvr02, configsvr03) – tvoří replikační set pro metadata clusteru.
+- **2 konfigurační servery** (configsvr01, configsvr02) – tvoří replikační set pro metadata clusteru.
 - **3 shardy** (každý shard je replikační set o 3 uzlech, např. shard01-a, shard01-b, shard01-c)
 - **2 routery (mongos)** – zajišťují rozdělování dotazů na správné shardy
 - **Seeder** – pomocný kontejner pro nahrávání dat
@@ -33,7 +33,7 @@ Každý shard je samostatný replikační set (PSS – Primary, Secondary, Secon
 - Proč takto? Tato architektura umožňuje škálování (sharding), vysokou dostupnost (replikace), odolnost proti výpadku a bezpečnost.
 - Odlišnosti od doporučení: Vše běží v Dockeru na jednom stroji (pro účely testování a výuky), v produkci by byly uzly na oddělených serverech.
 
-## 1.2 Specifika konfigurace
+## 1.2 Specifika konfigurace  
 
 ### 1.2.1 CAP teorém
 - MongoDB v této konfiguraci poskytuje **CP** (Consistency, Partition tolerance):
@@ -72,7 +72,7 @@ Každý shard je samostatný replikační set (PSS – Primary, Secondary, Secon
 ### 1.2.8 Zabezpečení
 - Cluster používá **keyfile autentizaci** pro zabezpečení komunikace mezi uzly a povinnou autentizaci uživatelů.
 - Každý kontejner má přístup k keyfile (`/data/mongodb-keyfile`).
-- Po inicializaci je vytvořen administrátorský účet (viz `/scripts/auth.js`).
+- Po inicializaci je vytvořen administrátorský účet (viz `/scripts/auth.sh`).
 
 ---
 

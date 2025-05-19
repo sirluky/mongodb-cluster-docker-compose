@@ -1,8 +1,9 @@
 import csv
-from pymongo import MongoClient, ASCENDING
+from pymongo import MongoClient
 from pymongo.errors import BulkWriteError
 from datetime import datetime
 import time
+from collections import defaultdict
 
 # MongoDB connection details
 mongo_uri = "mongodb://ecommerce_user:ecommerce123@router01:27017,router02:27017/ecommerce"
@@ -13,16 +14,29 @@ collection_name = "orders"
 orders_schema = {
     "$jsonSchema": {
         "bsonType": "object",
+        "required": ["order_status", "customer_id"],
         "properties": {
-            "order_id": {"bsonType": "string"},
-            "customer_id": {"bsonType": "string"},
             "order_status": {"bsonType": "string"},
+            "customer_id": {"bsonType": "string"},
             "order_purchase_timestamp": {"bsonType": ["date", "null"]},
             "order_approved_at": {"bsonType": ["date", "null"]},
             "order_delivered_carrier_date": {"bsonType": ["date", "null"]},
             "order_delivered_customer_date": {"bsonType": ["date", "null"]},
-            "order_estimated_delivery_date": {"bsonType": ["date", "null"]}
-        },
+            "order_estimated_delivery_date": {"bsonType": ["date", "null"]},
+            "items": {
+                "bsonType": "array",
+                "items": {
+                    "bsonType": "object",
+                    "required": ["product_id", "shipping_limit_date", "price", "freight_value"],
+                    "properties": {
+                        "product_id": {"bsonType": "string"},
+                        "shipping_limit_date": {"bsonType": "date"},
+                        "price": {"bsonType": ["double", "decimal"]},
+                        "freight_value": {"bsonType": ["double", "decimal"]}
+                    }
+                }
+            }
+        }
     }
 }
 
@@ -51,49 +65,69 @@ else:
     })
 collection = db[collection_name]
 
-# Create indexes for performance and relations
-print("Creating indexes ...")
-collection.create_index([("order_id", ASCENDING)], unique=True)
-collection.create_index([("customer_id", ASCENDING)])
-# For a reference to order_items, create an index on order_id in both collections
-# Foreign keys are not enforced in MongoDB, but you can create indexes for fast lookups
 
-print("Indexes created.")
+def parse_date(val):
+    try:
+        return datetime.strptime(val, "%Y-%m-%d %H:%M:%S")
+    except Exception:
+        return None
 
-csv_file_path = "../data/olist_orders_dataset.csv"
-print(f"Reading data from {csv_file_path} ...")
-def parse_row(row):
-    def parse_date(val):
-        try:
-            return datetime.strptime(val, "%Y-%m-%d %H:%M:%S")
-        except Exception:
-            return None
-    return {
-        "order_id": row["order_id"].strip('"'),
-        "customer_id": row["customer_id"].strip('"'),
-        "order_status": row["order_status"],
-        "order_purchase_timestamp": parse_date(row["order_purchase_timestamp"]),
-        "order_approved_at": parse_date(row["order_approved_at"]),
-        "order_delivered_carrier_date": parse_date(row["order_delivered_carrier_date"]),
-        "order_delivered_customer_date": parse_date(row["order_delivered_customer_date"]),
-        "order_estimated_delivery_date": parse_date(row["order_estimated_delivery_date"])
-    }
+# Načtení order_items
+print("Loading order items...")
+order_items = defaultdict(list)
+with open("../data/olist_order_items_dataset.csv", mode='r', encoding='utf-8') as file:
+    csv_reader = csv.DictReader(file)
+    for row in csv_reader:
+        item = {
+            "product_id": row["product_id"].strip('"'),
+            "shipping_limit_date": parse_date(row["shipping_limit_date"]),
+            "price": float(row["price"]),
+            "freight_value": float(row["freight_value"])
+        }
+        order_items[row["order_id"].strip('"')].append(item)
 
-with open(csv_file_path, mode='r', encoding='utf-8') as file:
+# Načtení a vložení orders s items
+print("Loading and inserting orders with items...")
+with open("../data/olist_orders_dataset.csv", mode='r', encoding='utf-8') as file:
     csv_reader = csv.DictReader(file)
     docs = []
     count = 0
+    batch_size = 5000
+    
     for row in csv_reader:
-        docs.append(parse_row(row))
+        order_id = row["order_id"].strip('"')
+        doc = {
+            "_id": order_id,
+            "customer_id": row["customer_id"].strip('"'),
+            "order_status": row["order_status"],
+            "order_purchase_timestamp": parse_date(row["order_purchase_timestamp"]),
+            "order_approved_at": parse_date(row["order_approved_at"]),
+            "order_delivered_carrier_date": parse_date(row["order_delivered_carrier_date"]),
+            "order_delivered_customer_date": parse_date(row["order_delivered_customer_date"]),
+            "order_estimated_delivery_date": parse_date(row["order_estimated_delivery_date"]),
+            "items": order_items[order_id]
+        }
+        docs.append(doc)
         count += 1
-        if count % 1000 == 0:
-            print(f"Parsed {count} rows ...")
-    print(f"Parsed total {count} rows. Inserting into MongoDB ...")
-    try:
-        result = collection.insert_many(docs, ordered=False)
-        print(f"Inserted {len(result.inserted_ids)} documents into '{collection_name}'.")
-    except BulkWriteError as bwe:
-        print("Some documents failed validation:", bwe.details)
+        
+        if len(docs) >= batch_size:
+            try:
+                result = collection.insert_many(docs, ordered=False)
+                print(f"Inserted {len(result.inserted_ids)} documents...")
+                docs = []
+            except BulkWriteError as bwe:
+                print("Some documents failed validation:", bwe.details)
+                docs = []
+    
+    # Insert remaining documents
+    if docs:
+        try:
+            result = collection.insert_many(docs, ordered=False)
+            print(f"Inserted {len(result.inserted_ids)} documents...")
+        except BulkWriteError as bwe:
+            print("Some documents failed validation:", bwe.details)
+
+print(f"Processed total {count} orders.")
 
 print("Done. Closing MongoDB connection.")
 client.close()
