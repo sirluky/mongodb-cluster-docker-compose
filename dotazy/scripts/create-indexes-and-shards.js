@@ -10,10 +10,15 @@ db.orders.createIndex({ "_id": 1 });
 db.orders.createIndex({ "customer_id": 1 });
 db.orders.createIndex({ "order_status": 1 });
 db.orders.createIndex({ "items.product_id": 1 });
+db.orders.createIndex({
+    "items.product_id": 1,
+    "items.price": 1
+});
 
 // Indexy pro kolekci products
 db.products.createIndex({ "_id": 1 });
 db.products.createIndex({ "product_category_name": 1 });
+
 
 // Indexy pro kolekci customers
 db.customers.createIndex({ "_id": 1 });
