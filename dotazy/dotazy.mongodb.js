@@ -277,14 +277,7 @@ db.runCommand({
 
 // 16 – Nastavení logování pomalých dotazů na mongos
 use("ecommerce");
-db.adminCommand({
-    setParameter: 1,
-    logLevel: 1,
-    logComponentVerbosity: {
-        query: { verbosity: 1 },
-        command: { verbosity: 1 }
-    }
-});
+db.customers.getShardDistribution()
 
 // 17 - Zobrazení pomalých dotazů a zdrojů připojení
 use("ecommerce");

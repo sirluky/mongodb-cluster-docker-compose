@@ -1,4 +1,4 @@
-# How to run
+# How to use
 
 ```bash
 # Prikaz pro spusteni
