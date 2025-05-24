@@ -2,6 +2,7 @@
 
 //!== Prace s daty
 // přidá dvě nové objednávky 
+use("ecommerce");
 db.orders.insertMany([
     {
         _id: "111111565e28c3e0d756192f84d8731f",
@@ -24,7 +25,7 @@ db.orders.insertMany([
 ]);
 
 
-// 2 – přidá 1 položku do existující objednávky
+// 2 - přidá 1 položku do existující objednávky
 use("ecommerce");
 db.orders.updateOne(
     { _id: "bfe42c22ecbf90bc9f35cf591270b6a7" },
@@ -40,14 +41,14 @@ db.orders.updateOne(
     }
 );
 
-// 3 – změní stav jedné objednávky a vrátí počty ovlivněných dokumentů
+// 3 - změní stav jedné objednávky a vrátí počty ovlivněných dokumentů
 use("ecommerce");
 db.orders.updateOne(
     { _id: "9d531c565e28c3e0d756192f84d8731f" },
     { $set: { order_status: "delivered", order_delivered_customer_date: new Date() } },
 );
 
-// 4 – findOneAndUpdate – přejmenuje město zákazníkovi a vrátí novou verzi dokumentu
+// 4 - přejmenuje město zákazníkovi a vrátí novou verzi dokumentu
 use("ecommerce");
 db.customers.findOneAndUpdate(
     { _id: "ae8db0691449a44352e7d535ddf78c5e" },
@@ -55,11 +56,11 @@ db.customers.findOneAndUpdate(
     { returnDocument: "after" }
 );
 
-// 5 – hromadně smaže produkty s nulovou váhou, deleteMany vrací deleteCount
+// 5 - hromadně smaže produkty s nulovou váhou, deleteMany vrací deleteCount
 use("ecommerce");
 db.products.deleteMany({ product_weight_g: { $lte: 0 } });
 
-// 6 – Označí „drahé“ objednávky nad 1000 příznakem expensive:true
+// 6 - Označí „drahé“ objednávky nad 1000 příznakem expensive:true
 use("ecommerce");
 db.orders.updateMany(
     {
@@ -73,7 +74,7 @@ db.orders.updateMany(
 );
 
 //!== Agregační funkce (slozitejsi dotazy)
-// 7 – top 10 států podle tržeb
+// 7 - top 10 států podle tržeb
 use("ecommerce");
 db.orders.aggregate([
     { $unwind: "$items" },
@@ -120,7 +121,7 @@ db.orders.aggregate([
     { $project: { _id: 1, totalOrderValue: 1, totalItems: 1, customerCity: "$customerDetails.customer_city", customerState: "$customerDetails.customer_state" } }
 ]);
 
-// 9 – průměrná doba doručení (purchase → delivered) podle státu
+// 9 - průměrná doba doručení (purchase → delivered) podle státu
 use("ecommerce");
 db.orders.aggregate([
     { $match: { order_delivered_customer_date: { $ne: null } } },
@@ -170,7 +171,7 @@ db.orders.find(
     }
 );
 
-// 11 – nejdražší objednávka vůbec na počet položek v objednávce
+// 11 - nejdražší objednávka vůbec na počet položek v objednávce
 use("ecommerce");
 db.orders.aggregate([
     {
@@ -229,7 +230,7 @@ db.orders.aggregate([
 ]);
 
 
-// 12 – nejdražší objednávka v každém měsíci
+// 12 - nejdražší objednávka v každém měsíci
 use("ecommerce");
 db.orders.aggregate([
     { $unwind: "$items" },
@@ -252,14 +253,14 @@ db.orders.aggregate([
 
 //!== Konfigurace / administrace (collection & cluster)
 
-// 13 – sharding – krátký výpis stavu
+// 13 - sharding - krátký výpis stavu
 sh.status();
 
-// 14 – informace o kolekci s validačním schématem
+// 14 - informace o kolekci s validačním schématem
 use("ecommerce");
 db.getCollectionInfos({ name: "orders" });
 
-// 15 – změna zpřísnění validace (přidavat do validace nejde takže se přepíše): 
+// 15 - změna zpřísnění validace (přidavat do validace nejde takže se přepíše): 
 // povolí jen známé stavy objednávky
 use("ecommerce");
 db.runCommand({
@@ -275,7 +276,7 @@ db.runCommand({
     }
 });
 
-// 16 – Nastavení logování pomalých dotazů na mongos
+// 16 - Nastavení logování pomalých dotazů na mongos
 use("ecommerce");
 db.customers.getShardDistribution()
 
@@ -285,14 +286,14 @@ db.adminCommand({
     getLog: "global"
 }).log.filter(line => line.includes("command")).slice(0, 50);
 
-// 18 – odpojení a připojení shardu od clusteru
+// 18 - odpojení a připojení shardu od clusteru
 // 'docker network disconnect - f funkcni_reseni_default "shard-02-node-a"'
 // 'docker network connect funkcni_reseni_default "shard-02-node-a"'
 
 
 // !== Nested (embedded) dokumenty
 
-// 19 – objednávky, kde alespoň jedna položka stála > 100 Kč
+// 19 - objednávky, kde alespoň jedna položka stála > 100 Kč
 use("ecommerce");
 db.orders.find(
     { items: { $elemMatch: { price: { $gt: 100 } } } },
@@ -306,7 +307,7 @@ db.orders.find(
     }
 ).limit(5);
 
-// 20 – projekce jen drahých položek (> 200 Kč) – používá $filter
+// 20 - projekce jen drahých položek (> 200 Kč) - používá $filter
 use("ecommerce");
 db.orders.aggregate([
     {
@@ -341,7 +342,7 @@ db.orders.aggregate([
     }
 ])
 
-// 21 – výpočet marže na položku
+// 21 - výpočet marže na položku
 use("ecommerce");
 db.orders.aggregate([
     { $unwind: "$items" }, // rozbalí pole veci v objednávce
@@ -369,7 +370,7 @@ db.orders.aggregate([
     }
 ]);
 
-// 22 – update nested pole pomocí pozičního operátoru [$]
+// 22 - update nested pole pomocí pozičního operátoru [$]
 // nastaví novou lhůtu dopravy pro první položku konkrétního produktu
 use("ecommerce");
 db.orders.findOneAndUpdate(
@@ -389,9 +390,7 @@ db.orders.findOneAndUpdate(
 );
 
 /*
-23 – $reduce uvnitř $addFields  
-   z každé objednávky udělá malý "statistický balíček" nad embedded polem items  
-   počítáme celkové poštovné, kolik položek stálo > 200 Kč a nejnižší cenu v objednávce  
+23 - počítáme celkové poštovné, kolik položek stálo > 200 Kč a nejnižší cenu v objednávce  
    $reduce prochází položku po položce a kumuluje hodnoty do objektu $$value             */
 use("ecommerce");
 db.orders.aggregate([
@@ -433,8 +432,8 @@ db.orders.aggregate([
 
 use("ecommerce");
 /*
-24 – $bucketAuto – dynamické cenové "pásma" objednávek  
-   sečteme ceny položek uvnitř každé objednávky (unwind → group)  
+24 - $bucketAuto - dynamické cenové "pásma" objednávek  
+   sečteme ceny položek uvnitř každé objednávky (unwind -> group)  
    $bucketAuto podle totalPrice rozdělí všechny objednávky do 4 intervalů po 10 objednávkách  
    pro každý koš vracíme seznam objednávek a průměrný počet položek        */
 db.orders.aggregate([
@@ -469,11 +468,11 @@ db.orders.aggregate([
 ]);
 
 // !== Indexy (vytváření / využití / statistiky)
-// 25 – tvorba compound indexu na orders (customer + status)
+// 25 - tvorba compound indexu na orders (customer + status)
 use("ecommerce");
 db.orders.createIndex({ customer_id: 1, order_status: 1 });
 
-// 26 – dotaz, který nutí Mongo použít právě vytvořený index (hint)
+// 26 - dotaz, který nutí Mongo použít právě vytvořený index (hint)
 use("ecommerce");
 db.orders.find(
     { customer_id: "e50a30de3c32f9406a7185f40ce6874d", order_status: "delivered" }
@@ -483,16 +482,16 @@ db.orders.find(
 use("ecommerce");
 db.products.dropIndex({ product_category_name: 1 });
 
-// 28 – explain – přehled, zda se index použije a jaký node
+// 28 - explain - přehled, zda se index použije a jaký node
 use("ecommerce");
 db.orders.find(
     { customer_id: "e50a30de3c32f9406a7185f40ce6874d", order_status: "created" }
 ).hint({ customer_id: 1, order_status: 1 }).explain("executionStats");
 
-// 29 – výpis všech indexů kolekce customers
+// 29 - výpis všech indexů kolekce customers
 use("ecommerce");
 db.customers.getIndexes();
 
-// 30 – $indexStats – dlouhodobá statistika používání indexů na orders
+// 30 - $indexStats - dlouhodobá statistika používání indexů na orders
 use("ecommerce");
 db.orders.aggregate([{ $indexStats: {} }]);
